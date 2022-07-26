@@ -10,7 +10,7 @@ param(
     $DestinationPath,
     [parameter(Mandatory = $false)]
     [string]
-    $LogPath = "$env:WINDIR\Logs"
+    $LogPath = "$PSScriptRoot\Logs"
 )
 
 begin{
@@ -22,7 +22,7 @@ begin{
     #-- Use Start-Transcript to create a .log file
     #-- If you use "Throw" you'll need to use "Stop-Transcript" before to stop the logging.
     #-- Major Benefit is that Start-Transcript also captures -Verbose and -Debug messages.
-    Start-Transcript -Path "$LogPath\NameofScript.log"
+    Start-Transcript -Path "$LogPath\Merge-Csv.log"
 }
 process{
     #-- PROCESS: Executes second. Executes multiple times based on how many objects are sent to the function through the pipeline. Optional.
